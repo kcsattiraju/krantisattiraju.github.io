@@ -1,135 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kranti Sattiraju | ML & LLM Engineer (Transitioning)</title>
-  <meta name="description" content="Senior Software Engineer transitioning into Machine Learning and LLM Engineering. Building production-ready AI systems." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kranti | ML Portfolio</title>
+  <meta name="description" content="Portfolio of Kranti — transitioning into Machine Learning." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbfbfa;
+      --card: rgba(255,255,255,.7);
+      --text: #1e1e1e;
+      --muted: #5e646a;
+      --line: rgba(0,0,0,.08);
+      --accent: #2f6f73;      /* calm teal */
+      --accent2: #7aa6a9;     /* soft teal */
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(47,111,115,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(122,166,169,.10), transparent 65%),
+        radial-gradient(900px 500px at 60% 90%, rgba(47,111,115,.08), transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    a{color:inherit; text-decoration: none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width: 980px; margin: 0 auto; padding: 28px 18px 60px;}
+
+    /* Top nav */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding: 10px 6px;
+      margin-bottom: 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(47,111,115,.10);
+    }
+    .nav a{
+      font-size: 14px;
+      color: var(--muted);
+      margin-left: 14px;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 820px){
+      .hero{grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .heroMain{padding: 26px;}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+    }
+    .kicker .pill{
+      width:8px; height:8px; border-radius: 99px;
+      background: var(--accent);
+    }
+
+    h1{
+      margin: 14px 0 6px;
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+    }
+    .headline{
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      max-width: 60ch;
+    }
+    .heroActions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--text);
+      background: rgba(255,255,255,.62);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn:hover{border-color: rgba(47,111,115,.35); background: rgba(255,255,255,.78); transform: translateY(-1px);}
+    .btn.primary{
+      border: 1px solid rgba(47,111,115,.35);
+      background: linear-gradient(135deg, rgba(47,111,115,.12), rgba(122,166,169,.10));
+    }
+
+    /* Profile card */
+    .heroSide{padding: 18px;}
+    .profile{
+      display:flex; gap:14px; align-items:center;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+    }
+    .avatar{
+      width: 78px; height: 78px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.04);
+    }
+    .pname{font-weight: 600; margin: 0}
+    .ploc{color: var(--muted); font-size: 13px; margin: 2px 0 0}
+    .quick{
+      margin-top: 14px;
+      display:grid;
+      gap:10px;
+    }
+    .qitem{
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+    }
+    .qitem b{font-size: 13px}
+    .qitem span{display:block; color: var(--muted); font-size: 13px; margin-top: 3px}
+
+    /* Sections */
+    .section{
+      margin-top: 18px;
+      padding: 22px;
+    }
+    .section h2{
+      font-size: 18px;
+      margin: 0 0 12px;
+      letter-spacing: -.2px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns: 1fr 1fr;} }
+    @media (max-width: 640px){ .grid{grid-template-columns: 1fr;} }
+
+    .tile{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      transition: transform .08s ease, border-color .2s ease;
+      height: 100%;
+    }
+    .tile:hover{transform: translateY(-1px); border-color: rgba(47,111,115,.35);}
+    .tile .tag{
+      display:inline-block;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      margin-bottom: 10px;
+    }
+    .tile h3{margin: 6px 0 6px; font-size: 15px}
+    .tile p{margin:0; color: var(--muted); font-size: 13px}
+    .meta{margin-top: 10px; font-size: 13px; color: var(--accent);}
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 820px){ .twoCol{grid-template-columns: 1fr;} }
+
+    ul.clean{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 16px;
+      padding: 16px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .smalllink a{color: var(--muted); margin-right: 12px;}
+  </style>
 </head>
+
 <body>
-  <header class="container header">
-    <div class="brand">
-      <h1>Kranti Sattiraju</h1>
-      <p class="subtitle">Machine Learning & LLM Engineer (Transitioning) • Senior Software Engineer</p>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Kranti</span>
+      </div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
 
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main class="container">
     <section class="hero">
-      <h2>Building production-ready AI systems</h2>
-      <p>
-        I combine strong backend engineering experience with applied Machine Learning and LLM system design
-        (RAG, embeddings, vector retrieval, and inference APIs) to build scalable, maintainable AI solutions.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="#contact">Get in Touch</a>
+      <div class="card heroMain">
+        <div class="kicker"><span class="pill"></span> Transitioning into Machine Learning</div>
+        <h1>Kranti Sattiraju</h1>
+        <p class="headline">
+          Full-stack engineer (9+ yrs) moving into ML/AI — building practical, production-minded ML projects with strong data engineering foundations.
+        </p>
+
+        <div class="heroActions">
+          <a class="btn primary" href="YOUR_RESUME_LINK" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn" href="YOUR_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="YOUR_LINKEDIN_LINK" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#projects">View Projects</a>
+        </div>
+      </div>
+
+      <aside class="card heroSide">
+        <div class="profile">
+          <!-- Replace src with your uploaded image file (e.g., assets/kranti.jpg) or a direct URL -->
+          <img class="avatar" src="YOUR_PHOTO_URL_OR_assets/kranti.jpg" alt="Kranti profile photo" />
+          <div>
+            <p class="pname">Kranti</p>
+            <p class="ploc">India • Open to ML roles</p>
+          </div>
+        </div>
+
+        <div class="quick">
+          <div class="qitem">
+            <b>Focus</b>
+            <span>ML engineering • Data pipelines • RAG systems</span>
+          </div>
+          <div class="qitem">
+            <b>Strengths</b>
+            <span>SQL/ETL • clean architecture • production APIs</span>
+          </div>
+          <div class="qitem">
+            <b>Currently</b>
+            <span>Building ML portfolio projects + interview prep</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="card section">
+      <h2>About</h2>
+      <div class="twoCol">
+        <div>
+          <p style="margin:0; color:var(--muted); font-size:14px;">
+            I’m a software engineer with a strong background in large-scale application development and data workflows.
+            I’m now transitioning into Machine Learning, focusing on end-to-end ML systems: data ingestion, training/evaluation,
+            and deployment patterns that work in real products.
+          </p>
+          <ul class="clean">
+            <li>9+ years full-stack experience (enterprise systems, APIs, integrations)</li>
+            <li>Strong SQL/ETL foundations; moving into Python + ML tooling</li>
+            <li>Interested in ML Engineering, AI Data Engineering, Applied ML</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tile">
+            <span class="tag">What I’m building</span>
+            <h3>Portfolio, but production-minded</h3>
+            <p>Small projects that demonstrate real ML workflows: data → model → evaluation → serving.</p>
+            <div class="meta">See Projects ↓</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="card">
-      <h3>Welcome</h3>
-      <p>
-        Thank you for visiting.
-      </p>
-      <p>
-        I am a Senior Software Engineer with over nine years of experience designing scalable, cloud-native systems,
-        currently focused on building production-ready Machine Learning and LLM-based applications. My work centers on
-        applied ML system design, including supervised modeling, anomaly detection, model evaluation, and
-        Retrieval-Augmented Generation (RAG) architectures.
-      </p>
-      <p>
-        I build end-to-end AI pipelines that span data preprocessing, feature engineering, embedding generation,
-        vector retrieval, and API-based inference deployment. My focus extends beyond model development to designing
-        scalable, maintainable backend systems that integrate seamlessly into enterprise workflows.
-      </p>
-      <p>
-        I bring domain expertise across tax, regulatory, and sustainability systems, where I have implemented AI-driven
-        document extraction, structured data processing pipelines, and compliance automation platforms. At Schneider Electric,
-        I developed unit-of-measure conversion engines and backend services supporting carbon and energy analytics workflows.
-        By combining domain knowledge with machine learning and LLM integration, I aim to build intelligent systems that improve
-        regulatory accuracy, sustainability reporting, operational efficiency, and enterprise decision-making.
-      </p>
-      <p>
-        My goal is to contribute to teams building robust, production-grade AI systems that balance model performance,
-        scalability, reliability, and real-world impact.
-      </p>
-    </section>
-
-    <section id="projects" class="card">
-      <h3>Featured Projects</h3>
-
+    <section id="projects" class="card section">
+      <h2>Projects</h2>
       <div class="grid">
-        <article class="project">
-          <h4>RAG Carbon & Sustainability Assistant</h4>
-          <p>
-            Retrieval-Augmented Generation system that answers sustainability questions using embeddings, vector search,
-            and structured unit normalization.
-          </p>
-          <p class="meta">Python • FastAPI • Vector Search • LLM • RAG</p>
-          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub Repo →</a>
-        </article>
+        <a class="tile" href="YOUR_PROJECT_1_LINK" target="_blank" rel="noreferrer">
+          <span class="tag">RAG • LLM</span>
+          <h3>Document Q&amp;A RAG System</h3>
+          <p>Chunking, embeddings, retrieval evaluation, and a simple API for search + answers.</p>
+          <div class="meta">Read more →</div>
+        </a>
 
-        <article class="project">
-          <h4>Energy Anomaly Detection</h4>
-          <p>
-            ML pipeline for detecting abnormal energy usage patterns with model evaluation and inference served via REST API.
-          </p>
-          <p class="meta">Python • scikit-learn • Time Series • FastAPI</p>
-          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub Repo →</a>
-        </article>
+        <a class="tile" href="YOUR_PROJECT_2_LINK" target="_blank" rel="noreferrer">
+          <span class="tag">ML • Regression</span>
+          <h3>End-to-End ML Pipeline</h3>
+          <p>Data cleaning, feature engineering, training, model tracking, and inference service.</p>
+          <div class="meta">Read more →</div>
+        </a>
 
-        <article class="project">
-          <h4>ML Model Deployment Template</h4>
-          <p>
-            Reusable template for training, versioning, and serving ML models in production with Docker-ready API deployment.
-          </p>
-          <p class="meta">FastAPI • Docker • CI/CD • Model Serving</p>
-          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub Repo →</a>
-        </article>
+        <a class="tile" href="YOUR_PROJECT_3_LINK" target="_blank" rel="noreferrer">
+          <span class="tag">Data • ETL</span>
+          <h3>Analytics Dataset Builder</h3>
+          <p>ETL workflows + quality checks; designed for maintainability and scale.</p>
+          <div class="meta">Read more →</div>
+        </a>
       </div>
-
-      <p class="note">
-        Tip: Replace the “GitHub Repo →” links with your actual repository URLs once created.
+      <p style="margin:14px 0 0; color:var(--muted); font-size:13px;">
+        Tip: Keep 3–5 projects only, each with a clear outcome, stack, and what you learned.
       </p>
     </section>
 
-    <section id="skills" class="card">
-      <h3>Skills</h3>
-      <ul class="skills">
-        <li><strong>ML/AI:</strong> supervised learning, anomaly detection, model evaluation, embeddings, RAG</li>
-        <li><strong>Languages:</strong> Python, C#</li>
-        <li><strong>Backend:</strong> REST APIs, inference services, scalable system design</li>
-        <li><strong>Cloud:</strong> Azure (Cognitive Services, Form Recognizer, App Services)</li>
-        <li><strong>Data:</strong> SQL Server, data pipelines, validation & normalization</li>
-      </ul>
+    <section id="skills" class="card section">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="tile">
+          <span class="tag">Core</span>
+          <h3>Engineering</h3>
+          <p>APIs • Clean Architecture • Integrations • Testing • Git</p>
+        </div>
+        <div class="tile">
+          <span class="tag">Data</span>
+          <h3>SQL &amp; Pipelines</h3>
+          <p>SQL • ETL • Data Modeling • Quality checks</p>
+        </div>
+        <div class="tile">
+          <span class="tag">ML</span>
+          <h3>ML Foundations</h3>
+          <p>Python (learning) • Model evaluation • Feature engineering • RAG concepts</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="card">
-      <h3>Contact</h3>
-      <p>If you’d like to connect about ML/LLM engineering roles or collaborations:</p>
-      <ul class="contact">
-        <li><strong>Email:</strong> <a href="mailto:kcsat92@gmail.com">kcsat92@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kcsat" target="_blank" rel="noreferrer">linkedin.com/in/kcsat</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/" target="_blank" rel="noreferrer">github.com/YOUR_USERNAME</a></li>
-      </ul>
+    <section id="contact" class="card section">
+      <h2>Contact</h2>
+      <p style="margin:0; color:var(--muted); font-size:14px;">
+        Want to collaborate or discuss ML roles? Reach out:
+      </p>
+      <div class="heroActions" style="margin-top:12px;">
+        <a class="btn primary" href="mailto:YOUR_EMAIL">Email</a>
+        <a class="btn" href="YOUR_LINKEDIN_LINK" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="YOUR_GITHUB_LINK" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
     </section>
-  </main>
 
-  <footer class="container footer">
-    <p>© <span id="year"></span> Kranti Sattiraju • Built with GitHub Pages</p>
-  </footer>
+    <footer>
+      <div>© <span id="yr"></span> Kranti • Minimal ML Portfolio</div>
+      <div class="smalllink">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("yr").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
