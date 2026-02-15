@@ -4,91 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kranti Sattiraju | ML Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Kranti Sattiraju — ML Engineer (Transitioning) | Full-Stack (9+ yrs) | LLMs, RAG, .NET, SQL" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
   <!-- Top Nav -->
-  <nav class="topnav">
-    <div class="container nav-inner">
-      <a class="logo" href="#top">KS</a>
-      <div class="nav-links">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Go to top">Kranti</a>
+
+      <nav class="nav">
         <a href="#about">About</a>
         <a href="#strengths">Strengths</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a class="btn btn-small" href="#contact">Contact</a>
-      </div>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <!-- Hero -->
-  <header id="top" class="hero">
+  <main id="top" class="hero">
     <div class="container hero-grid">
-
-      <div class="hero-left">
+      <section class="hero-left" aria-label="Intro">
         <p class="badge">Transitioning to ML / AI • Open to ML Engineer roles</p>
 
-        <h1>
-          Kranti <span class="muted">Sattiraju</span>
-        </h1>
+        <h1>Kranti <span class="muted">Sattiraju</span></h1>
 
         <p class="subtitle">
-          Machine Learning Engineer (Transitioning) • Full-Stack Engineer (9+ Years) •
-          LLMs, RAG, .NET, SQL
+          ML Engineer (Transitioning) • Full-Stack Engineer (9+ yrs) • LLMs / RAG • .NET • SQL
+        </p>
+
+        <p class="summary">
+          I build production-minded systems—APIs, data pipelines, and ML workflows. Currently focused on
+          RAG systems, evaluation, and deploying ML features into real products.
         </p>
 
         <div class="hero-actions">
           <a class="btn" href="#projects">View Projects</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/kcsat/" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/kcsat/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
-        <div class="hero-meta">
+        <div class="quick-links" aria-label="Quick links">
           <a href="mailto:kcsat92@gmail.com">kcsat92@gmail.com</a>
-          <span class="dot">•</span>
+          <span class="sep">•</span>
           <a href="https://www.linkedin.com/in/kcsat/" target="_blank" rel="noopener">linkedin.com/in/kcsat</a>
         </div>
-      </div>
+      </section>
 
-      <div class="hero-right">
-        <div class="photo-card">
+      <aside class="hero-right" aria-label="Profile card">
+        <div class="profile-card">
           <img
-            class="profile-photo"
+            class="avatar"
             src="assets/profile.jpg"
-            alt="Kranti Sattiraju profile photo"
+            alt="Profile photo of Kranti Sattiraju"
             loading="lazy"
           />
-          <div class="photo-caption">
-            <p class="caption-title">Building practical ML systems</p>
-            <p class="caption-subtitle">RAG apps • evaluation • data pipelines</p>
+
+          <div class="profile-meta">
+            <p class="role">Machine Learning Engineer</p>
+            <p class="line">Pragmatic ML • Strong engineering • Clear communication</p>
+          </div>
+
+          <div class="mini-stats">
+            <div class="stat">
+              <div class="stat-k">Location</div>
+              <div class="stat-v">India (IST)</div>
+            </div>
+            <div class="stat">
+              <div class="stat-k">Focus</div>
+              <div class="stat-v">RAG • Evaluation • Deployment</div>
+            </div>
           </div>
         </div>
-      </div>
-
+      </aside>
     </div>
-  </header>
+  </main>
 
   <!-- About -->
   <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
       <p class="lead">
-        I’m a software engineer with 9+ years of experience delivering enterprise applications.
-        I’m currently transitioning into Machine Learning and AI engineering, focusing on LLM-powered
-        systems (RAG, embeddings, evaluation), and building production-grade APIs and data workflows.
+        Full-stack software engineer with 9+ years building enterprise systems and data-heavy applications.
+        I’m transitioning into ML Engineering with a focus on real-world ML systems: data pipelines, evaluation,
+        and deployment-ready APIs.
       </p>
 
-      <div class="pill-row">
+      <div class="pills" aria-label="Key areas">
         <span class="pill">LLMs & Prompting</span>
         <span class="pill">RAG Systems</span>
+        <span class="pill">ML Evaluation</span>
         <span class="pill">C# / .NET</span>
-        <span class="pill">SQL</span>
+        <span class="pill">SQL / ETL</span>
         <span class="pill">REST APIs</span>
-        <span class="pill">Azure</span>
       </div>
     </div>
   </section>
@@ -97,41 +108,27 @@
   <section id="strengths" class="section alt">
     <div class="container">
       <h2>Strengths</h2>
-      <p class="section-subtitle">
-        What I consistently bring to teams — clarity, ownership, and delivery.
-      </p>
+      <p class="section-subtitle">What I consistently bring to teams.</p>
 
-      <div class="cards">
+      <div class="grid cards">
         <article class="card">
-          <h3>Systems Thinking</h3>
-          <p>
-            Strong at designing clean architectures, identifying trade-offs, and building reliable,
-            scalable systems end-to-end.
-          </p>
+          <h3>Systems thinking</h3>
+          <p>Design clean architecture, define trade-offs, and build reliable end-to-end solutions.</p>
         </article>
 
         <article class="card">
-          <h3>ML Engineering Mindset</h3>
-          <p>
-            Hands-on with practical ML workflows: data prep, model iteration, evaluation,
-            and integrating ML into products.
-          </p>
+          <h3>Data + backend depth</h3>
+          <p>Strong in SQL/ETL, APIs, and scalable services—useful for production ML engineering.</p>
         </article>
 
         <article class="card">
-          <h3>Execution & Ownership</h3>
-          <p>
-            Comfortable owning ambiguous problems, collaborating across teams, and delivering
-            high-quality outcomes quickly.
-          </p>
+          <h3>Execution & ownership</h3>
+          <p>Comfortable owning ambiguous problems and delivering high-quality results quickly.</p>
         </article>
 
         <article class="card">
-          <h3>Enterprise Experience</h3>
-          <p>
-            Deep experience with production constraints: observability, reliability, security,
-            performance, and stakeholder alignment.
-          </p>
+          <h3>Communication</h3>
+          <p>Clear documentation, crisp summaries, and collaboration across teams and stakeholders.</p>
         </article>
       </div>
     </div>
@@ -142,121 +139,149 @@
     <div class="container">
       <div class="section-head">
         <h2>Featured Projects</h2>
-        <p class="section-subtitle">A few projects that show my ML + engineering direction.</p>
+        <p class="section-subtitle">Replace “GitHub ↗” with your repo links when ready.</p>
       </div>
 
-      <div class="project-grid">
+      <div class="grid projects">
+        <article class="card project">
+          <div class="top">
+            <h3>LLM Knowledge Assistant (RAG)</h3>
+            <span class="tag">Embeddings • Retrieval • Evaluation</span>
+          </div>
+          <p>
+            RAG pipeline that indexes documents, retrieves relevant context, and generates grounded answers.
+            Emphasis on relevance and reducing hallucinations.
+          </p>
+          <ul class="bullets">
+            <li>Chunking + metadata, retrieval tuning, prompt templates</li>
+            <li>Basic evaluation harness for relevance/faithfulness checks</li>
+          </ul>
+          <div class="links">
+            <a href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
+            <a href="#" aria-disabled="true" title="Add demo link (optional)">Demo ↗</a>
+          </div>
+        </article>
 
-        <article class="project">
-          <div class="project-top">
+        <article class="card project">
+          <div class="top">
             <h3>Enterprise Unit Conversion API</h3>
             <span class="tag">.NET • Clean Architecture</span>
           </div>
           <p>
-            Built a scalable unit-of-measure conversion API for energy and carbon accounting use cases,
-            with layered architecture, validation, and extensible conversion rules.
+            Scalable API for unit-of-measure conversions for energy and carbon accounting use cases,
+            designed for extensibility and correctness.
           </p>
           <ul class="bullets">
-            <li>Designed API contracts + domain layer for UOM groups, units, and conversions</li>
-            <li>Focused on reliability, testability, and extensibility for future datasets</li>
+            <li>Domain model for UOM groups, units, conversions</li>
+            <li>Validation, testing mindset, and clean layering</li>
           </ul>
-          <div class="project-links">
-            <a class="link" href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
+          <div class="links">
+            <a href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-top">
-            <h3>LLM Knowledge Assistant (RAG)</h3>
-            <span class="tag">Embeddings • Vector Search</span>
+        <article class="card project">
+          <div class="top">
+            <h3>End-to-End ML Pipeline</h3>
+            <span class="tag">Training • Metrics • Inference</span>
           </div>
           <p>
-            Built a RAG pipeline that indexes documents, retrieves relevant context, and produces grounded
-            answers using an LLM. Focused on reducing hallucinations and improving relevance.
+            Structured workflow: dataset prep → training → evaluation → inference endpoint.
+            Built to be reproducible and integration-friendly.
           </p>
           <ul class="bullets">
-            <li>Chunking + embedding + retrieval with prompt templates</li>
-            <li>Added basic evaluation: answer faithfulness and retrieval relevance</li>
+            <li>Config-driven runs, baseline comparisons, short model-card write-up</li>
+            <li>Packaged inference behind a simple REST API</li>
           </ul>
-          <div class="project-links">
-            <a class="link" href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
+          <div class="links">
+            <a href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="project">
-          <div class="project-top">
-            <h3>Neural Network From Scratch</h3>
-            <span class="tag">Backprop • Gradient Descent</span>
-          </div>
-          <p>
-            Implemented a small neural network to understand weight updates, activations, and loss optimization,
-            with visualizations for learning.
-          </p>
-          <ul class="bullets">
-            <li>Forward pass + loss + backprop implementation</li>
-            <li>Tracked training curves and common failure modes</li>
+  <!-- Skills -->
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="grid split">
+        <div class="card">
+          <h3>ML & Data</h3>
+          <ul class="list">
+            <li>Model evaluation, baselines, error analysis</li>
+            <li>RAG concepts: chunking, embeddings, retrieval</li>
+            <li>SQL, data modeling, ETL</li>
+            <li>Feature engineering fundamentals</li>
           </ul>
-          <div class="project-links">
-            <a class="link" href="#" aria-disabled="true" title="Add your GitHub repo link">GitHub ↗</a>
-          </div>
-        </article>
+        </div>
 
+        <div class="card">
+          <h3>Engineering</h3>
+          <ul class="list">
+            <li>C# / .NET, REST APIs, clean architecture</li>
+            <li>Testing mindset, readable code, documentation</li>
+            <li>Git workflows, code reviews, CI/CD concepts</li>
+            <li>Cloud basics (Azure)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="section alt">
+  <section id="experience" class="section">
     <div class="container">
       <h2>Experience</h2>
 
       <div class="timeline">
-
         <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-content">
-            <h3>Software Engineer — Schneider Electric</h3>
-            <p class="t-meta">Mar 2025 – Jan 2026</p>
-            <ul>
-              <li>Developed energy-domain features and improved delivery using AI-assisted workflows.</li>
-              <li>Collaborated across teams to build maintainable, scalable enterprise components.</li>
+          <div class="t-left">
+            <h3>Software Engineer</h3>
+            <p class="t-org">Schneider Electric</p>
+            <p class="t-time">Mar 2025 – Jan 2026</p>
+          </div>
+          <div class="t-right">
+            <ul class="list">
+              <li>Built and maintained business applications and services in the energy domain.</li>
+              <li>Collaborated across teams; improved delivery quality and reliability.</li>
             </ul>
           </div>
         </div>
 
         <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-content">
-            <h3>Senior Software Engineer — PwC</h3>
-            <p class="t-meta">9+ years</p>
-            <ul>
-              <li>Designed and delivered large-scale applications with strong backend architecture.</li>
-              <li>Led solutioning, integration, and performance improvements across systems.</li>
+          <div class="t-left">
+            <h3>Senior Software Engineer</h3>
+            <p class="t-org">PwC</p>
+            <p class="t-time">9+ years</p>
+          </div>
+          <div class="t-right">
+            <ul class="list">
+              <li>Designed scalable applications, APIs, and integrations across teams.</li>
+              <li>Owned solutioning, performance improvements, and end-to-end delivery.</li>
             </ul>
           </div>
         </div>
-
       </div>
+
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact" class="section alt">
     <div class="container">
       <h2>Contact</h2>
 
       <div class="contact-card">
-        <p class="contact-line">
+        <div class="contact-row">
           <span class="label">Email</span>
           <a href="mailto:kcsat92@gmail.com">kcsat92@gmail.com</a>
-        </p>
-
-        <p class="contact-line">
+        </div>
+        <div class="contact-row">
           <span class="label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/kcsat/" target="_blank" rel="noopener">
-            linkedin.com/in/kcsat
-          </a>
-        </p>
+          <a href="https://www.linkedin.com/in/kcsat/" target="_blank" rel="noopener">linkedin.com/in/kcsat</a>
+        </div>
       </div>
     </div>
   </section>
@@ -266,6 +291,5 @@
       <p>© 2026 Kranti Sattiraju</p>
     </div>
   </footer>
-
 </body>
 </html>
